@@ -41,7 +41,9 @@ public class movement : MonoBehaviour
         {
             atisyapildi = 0;
             GameObject mermi;
-            mermi=Instantiate(bullet,rigbody.transform) as GameObject;
+            Vector2 konum = rigbody.transform.position; ;
+            mermi=Instantiate(bullet) as GameObject;
+            mermi.transform.position = konum;
             Rigidbody2D rigofbullet;
             rigofbullet = mermi.GetComponent<Rigidbody2D>();
             rigofbullet.velocity = new Vector2(lastfirecoordinates.x * bullet_speed, lastfirecoordinates.y * bullet_speed);
